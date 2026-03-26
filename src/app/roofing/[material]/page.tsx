@@ -105,6 +105,7 @@ export default async function RoofingMaterialPage({
             href: `/roofing/${m.slug}/`,
           }))}
         serviceName={material.title}
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

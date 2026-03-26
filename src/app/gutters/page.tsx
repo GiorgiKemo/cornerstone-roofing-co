@@ -51,6 +51,20 @@ export default function GuttersPage() {
           serviceType: "Gutter Installation and Repair",
         }}
       />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: service.sections.faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.a,
+            },
+          })),
+        }}
+      />
       <ServicePageTemplate
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -74,6 +88,7 @@ export default function GuttersPage() {
           { title: "Roof Maintenance", href: "/roof-maintenance" },
         ]}
         serviceName="Gutter Installation"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

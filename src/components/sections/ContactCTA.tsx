@@ -1,23 +1,42 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { useRef, useActionState, useEffect } from "react";
+import { Phone, Mail, MapPin, ArrowRight, Loader2 } from "lucide-react";
+import { toast } from "sonner";
+import { submitContactForm, type ContactFormState } from "@/app/actions/contact";
 
 interface ContactCTAProps {
   service?: string;
   city?: string;
 }
 
+const initialState: ContactFormState = { success: false };
+
 export default function ContactCTA({ service, city }: ContactCTAProps) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const sectionRef = useRef(null);
+  const inView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const [state, formAction, isPending] = useActionState(submitContactForm, initialState);
+
+  useEffect(() => {
+    if (state.success) {
+      toast.success("Estimate request sent! We'll contact you shortly.");
+      formRef.current?.reset();
+    } else if (state.error) {
+      toast.error(state.error);
+    }
+  }, [state]);
+
+  const inputClass =
+    "w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all";
 
   return (
     <section
       id="contact"
       className="py-24 md:py-32 bg-navy relative overflow-hidden"
-      ref={ref}
+      ref={sectionRef}
     >
       {/* Decorative elements */}
       <motion.div
@@ -80,8 +99,9 @@ export default function ContactCTA({ service, city }: ContactCTAProps) {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <form
+              ref={formRef}
               className="bg-card rounded-2xl p-8 shadow-2xl"
-              onSubmit={(e) => e.preventDefault()}
+              action={formAction}
             >
               <h3 className="text-2xl font-heading font-bold text-foreground mb-6">
                 Request Free Estimate
@@ -89,28 +109,38 @@ export default function ContactCTA({ service, city }: ContactCTAProps) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <input
                   type="text"
+                  name="firstName"
                   placeholder="First Name"
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all"
+                  required
+                  className={inputClass}
                 />
                 <input
                   type="text"
+                  name="lastName"
                   placeholder="Last Name"
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all"
+                  required
+                  className={inputClass}
                 />
               </div>
               <input
                 type="email"
+                name="email"
                 placeholder="Email Address"
-                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all mb-4"
+                required
+                className={`${inputClass} mb-4`}
               />
               <input
                 type="tel"
+                name="phone"
                 placeholder="Phone Number"
-                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all mb-4"
+                required
+                className={`${inputClass} mb-4`}
               />
               <select
+                name="service"
                 defaultValue={service || ""}
-                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all mb-4"
+                required
+                className={`${inputClass} mb-4`}
               >
                 <option value="">Select Service</option>
                 <option value="Roof Replacement">Roof Replacement</option>
@@ -120,20 +150,29 @@ export default function ContactCTA({ service, city }: ContactCTAProps) {
                 <option value="Gutters">Gutters</option>
                 <option value="Roof Inspection">Roof Inspection</option>
               </select>
-              {city && (
-                <input type="hidden" name="city" value={city} />
-              )}
+              {city && <input type="hidden" name="city" value={city} />}
               <textarea
+                name="message"
                 placeholder="Tell us about your project..."
                 rows={3}
-                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all mb-6 resize-none"
+                className={`${inputClass} mb-6 resize-none`}
               />
               <button
                 type="submit"
-                className="group w-full flex items-center justify-center gap-2 bg-secondary text-secondary-foreground py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-all duration-300"
+                disabled={isPending}
+                className="group w-full flex items-center justify-center gap-2 bg-secondary text-secondary-foreground py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-all duration-300 disabled:opacity-70"
               >
-                Get My Free Estimate
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                {isPending ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Get My Free Estimate
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
               </button>
             </form>
           </motion.div>

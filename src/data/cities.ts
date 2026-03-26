@@ -496,6 +496,78 @@ Niles homeowners are practical people who value straightforward communication, h
     ],
     nearbyAreas: ["skokie", "park-ridge", "des-plaines", "glenview", "chicago"],
   },
+  {
+    slug: "plainfield",
+    name: "Plainfield",
+    county: "Will County",
+    metaTitle: "Roofing Contractor in Plainfield, IL | Cornerstone Roofing Co.",
+    metaDescription:
+      "Plainfield roofing services by Cornerstone Roofing Co. Roof replacement, repair, and storm damage restoration for one of Will County's fastest-growing communities. Free estimates.",
+    intro: `Plainfield has experienced explosive residential growth since the early 2000s, transforming from a quiet farming village into one of Will County's largest and fastest-growing communities. Subdivisions like Grande Park, Whispering Hills, Clublands, and Wesmere feature thousands of homes built during the 2000s building boom, and those roofs are now reaching the 15-to-20-year mark where deterioration accelerates and replacement becomes necessary. The production-built homes that define much of Plainfield's housing stock were typically installed with builder-grade three-tab or entry-level architectural shingles that were never intended to last beyond two decades, especially under the severe weather conditions that regularly impact Will County.
+
+Plainfield sits squarely in one of Chicagoland's most active severe weather corridors, with the open terrain to the west offering little resistance to powerful thunderstorm complexes that produce damaging hail and straight-line winds. Cornerstone Roofing Co. has helped hundreds of Plainfield homeowners navigate the roof replacement process, from initial storm damage inspections and insurance claim documentation to final installation of impact-resistant shingles designed to withstand the next round of severe weather. We understand the permitting requirements through the Village of Plainfield Building Department and work efficiently within the HOA guidelines that govern most of the village's newer subdivisions.`,
+    serviceHighlights: [
+      "Roof replacement for 2000s-era homes reaching end of shingle lifespan",
+      "Storm damage inspection and full insurance claim assistance",
+      "Impact-resistant shingle upgrades for severe weather protection",
+      "HOA-compliant material selection and color matching",
+    ],
+    nearbyAreas: ["naperville", "joliet", "bolingbrook"],
+  },
+  {
+    slug: "elk-grove-village",
+    name: "Elk Grove Village",
+    county: "Cook County",
+    metaTitle: "Roofing Contractor in Elk Grove Village, IL | Cornerstone Roofing Co.",
+    metaDescription:
+      "Elk Grove Village roofing contractor. Quality roof replacement, repair, and gutter services for residential homes throughout Elk Grove Village. Serving the community for 15 years.",
+    intro: `Elk Grove Village is known for its massive industrial park, the largest in North America, but the residential side of the village is equally impressive with thousands of well-kept homes spanning decades of construction. The original ranch and split-level homes built in the 1960s and 1970s along streets near Biesterfield Road and Nerge Road form the backbone of the housing stock, complemented by townhome developments from the 1980s and scattered newer construction. Many of these homes have been through multiple roofing cycles, and owners who invested in quality materials during the last replacement are now seeing the benefits of that decision as their neighbors face premature failures from budget installations.
+
+Elk Grove Village's proximity to O'Hare International Airport places it in a well-known storm corridor where organized thunderstorm systems funnel through the northwest suburbs with regularity during the spring and summer months. The combination of wind-driven rain, frequent hail events, and the temperature extremes that characterize Chicagoland winters creates a demanding environment for roofing systems. Cornerstone Roofing Co. provides Elk Grove Village homeowners with comprehensive roofing services that account for these conditions, including proper ice-and-water shield installation at all vulnerable points, high-wind-rated shingle systems, and ventilation improvements that reduce ice dam formation during harsh winters.`,
+    serviceHighlights: [
+      "Mid-century home roofing with ventilation and insulation upgrades",
+      "Storm damage restoration in the O'Hare corridor",
+      "High-wind-rated shingle systems for exposed suburban locations",
+      "Complete gutter replacement and ice dam prevention solutions",
+    ],
+    nearbyAreas: ["schaumburg", "arlington-heights", "mount-prospect", "des-plaines"],
+  },
+  {
+    slug: "buffalo-grove",
+    name: "Buffalo Grove",
+    county: "Lake County",
+    metaTitle: "Roofing Contractor in Buffalo Grove, IL | Cornerstone Roofing Co.",
+    metaDescription:
+      "Buffalo Grove roofing services. Expert roof replacement and repair for 1980s-90s homes throughout Buffalo Grove. Quality workmanship backed by manufacturer warranties.",
+    intro: `Buffalo Grove straddles the Cook-Lake county line and is defined by the wave of residential construction that swept through during the 1980s and 1990s. Neighborhoods like Cambridge on the Lake, Strathmore, and the Arlington Club feature the colonial, Georgian, and transitional-style homes that were popular during that era, many with steep roof pitches, multiple dormers, and complex valley intersections that demand skilled installation. These homes are now 30 to 40 years old, and the original roofing systems, even those that were well-maintained, have reached or exceeded their expected service life. Homeowners across Buffalo Grove are facing the reality that patching and spot repairs can no longer keep ahead of the underlying deterioration.
+
+Cornerstone Roofing Co. has extensive experience with the specific roofing challenges presented by Buffalo Grove's housing stock. The steep pitches and architectural complexity that give these homes their curb appeal also create installation challenges that require experienced crews and careful planning. We work with Buffalo Grove homeowners to select shingle profiles and colors that complement the traditional architectural styles prevalent in the village, and our installations include the enhanced underlayment, valley flashing, and ventilation systems that these complex roof geometries require for long-term performance.`,
+    serviceHighlights: [
+      "Specialists in 1980s-90s home roof replacement with complex rooflines",
+      "Steep-slope installation expertise for colonial and Georgian homes",
+      "Enhanced underlayment and valley flashing for long-term protection",
+      "Manufacturer-backed warranty programs with certified installation",
+    ],
+    nearbyAreas: ["arlington-heights", "palatine"],
+  },
+  {
+    slug: "crystal-lake",
+    name: "Crystal Lake",
+    county: "McHenry County",
+    metaTitle: "Roofing Contractor in Crystal Lake, IL | Cornerstone Roofing Co.",
+    metaDescription:
+      "Crystal Lake roofing contractor. Roof replacement, repair, and storm damage services for McHenry County's largest city. Built to handle heavy snow and severe weather.",
+    intro: `Crystal Lake is the largest city in McHenry County, combining the appeal of lakeside living with the convenience of suburban infrastructure. The housing stock reflects the city's gradual growth from a resort community into a full-fledged suburb, with charming early-twentieth-century homes near the downtown and Crystal Lake shoreline giving way to mid-century ranches, 1980s subdivisions in areas like Coventry and Lake in the Hills border neighborhoods, and newer construction along the Route 14 corridor. This range of home ages and styles means that roofing needs vary dramatically from block to block, with some homeowners dealing with aging cedar shake roofs while others face hail-damaged architectural shingles on relatively new homes.
+
+McHenry County receives notably heavier snowfall than communities closer to Chicago, and Crystal Lake homeowners know firsthand the toll that repeated freeze-thaw cycles, heavy snow loads, and ice dam formation take on roofing systems. Cornerstone Roofing Co. brings roofing solutions tailored to these northern suburban conditions, including enhanced ice-and-water shield coverage that extends well beyond code minimums, improved attic ventilation to reduce ice dam risk, and snow load considerations for roof structures that must bear the weight of McHenry County's longer and heavier winters. We serve Crystal Lake with the same quality and responsiveness that has made us a trusted name across Chicagoland.`,
+    serviceHighlights: [
+      "Heavy snowfall and ice dam prevention roofing solutions",
+      "Cedar shake to architectural shingle conversions",
+      "Storm damage repair with insurance claim documentation",
+      "Enhanced ice-and-water shield coverage for northern Illinois winters",
+    ],
+    nearbyAreas: ["elgin", "palatine"],
+  },
 ];
 
 export const sidingCities: City[] = [

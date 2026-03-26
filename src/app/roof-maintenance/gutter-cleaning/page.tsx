@@ -25,6 +25,34 @@ export const metadata: Metadata = {
 };
 
 export default function GutterCleaningPage() {
+  const faqs = [
+    {
+      question: "How often should gutters be cleaned in Chicago?",
+      answer:
+        "We recommend at minimum twice per year: once in late spring after tree blossoms and seed pods have fallen, and once in late November after fall leaf drop is complete. Homes surrounded by cottonwood, oak, or maple trees that produce heavy debris may benefit from an additional mid-summer cleaning.",
+    },
+    {
+      question: "How much does gutter cleaning cost in Chicago?",
+      answer:
+        "Professional gutter cleaning for a typical single-story Chicago-area home ranges from $125 to $225. Two-story homes typically cost $175 to $325 due to the additional ladder work and access challenges. Our twice-yearly plans offer a discount compared to individual service calls.",
+    },
+    {
+      question: "Can gutter cleaning prevent ice dams?",
+      answer:
+        "Clean gutters are one of the most effective defenses against ice dams. While proper attic insulation and ventilation are also important factors, clear gutters allow meltwater to drain freely rather than pooling and freezing at the roof edge. Most Chicago ice dam problems start with clogged gutters.",
+    },
+    {
+      question: "Do you clean gutters in winter?",
+      answer:
+        "We perform gutter cleaning through late November. Once ice and snow have accumulated, cleaning becomes unsafe and ineffective. If you missed your fall cleaning and are experiencing ice dam issues, we offer ice dam removal services as a separate emergency service.",
+    },
+    {
+      question: "Should I get gutter guards instead of regular cleaning?",
+      answer:
+        "Gutter guards significantly reduce the frequency of cleaning but do not eliminate it entirely. Fine debris and shingle granules can still accumulate in the trough over time. For most homeowners, guards are a worthwhile investment that reduces cleaning from twice yearly to once every 2-3 years. We install several guard types and can recommend the best option for your home.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +77,20 @@ export default function GutterCleaningPage() {
             },
           },
           serviceType: "Gutter Cleaning",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -125,34 +167,9 @@ Our service also includes a visual inspection of the gutter system and roof edge
               "Our spring and fall cleaning plans are timed to address the two heaviest debris seasons in Chicago, keeping your gutters clear through the critical ice dam and heavy rain periods.",
           },
         ]}
-        faqs={[
-          {
-            question: "How often should gutters be cleaned in Chicago?",
-            answer:
-              "We recommend at minimum twice per year: once in late spring after tree blossoms and seed pods have fallen, and once in late November after fall leaf drop is complete. Homes surrounded by cottonwood, oak, or maple trees that produce heavy debris may benefit from an additional mid-summer cleaning.",
-          },
-          {
-            question: "How much does gutter cleaning cost in Chicago?",
-            answer:
-              "Professional gutter cleaning for a typical single-story Chicago-area home ranges from $125 to $225. Two-story homes typically cost $175 to $325 due to the additional ladder work and access challenges. Our twice-yearly plans offer a discount compared to individual service calls.",
-          },
-          {
-            question: "Can gutter cleaning prevent ice dams?",
-            answer:
-              "Clean gutters are one of the most effective defenses against ice dams. While proper attic insulation and ventilation are also important factors, clear gutters allow meltwater to drain freely rather than pooling and freezing at the roof edge. Most Chicago ice dam problems start with clogged gutters.",
-          },
-          {
-            question: "Do you clean gutters in winter?",
-            answer:
-              "We perform gutter cleaning through late November. Once ice and snow have accumulated, cleaning becomes unsafe and ineffective. If you missed your fall cleaning and are experiencing ice dam issues, we offer ice dam removal services as a separate emergency service.",
-          },
-          {
-            question: "Should I get gutter guards instead of regular cleaning?",
-            answer:
-              "Gutter guards significantly reduce the frequency of cleaning but do not eliminate it entirely. Fine debris and shingle granules can still accumulate in the trough over time. For most homeowners, guards are a worthwhile investment that reduces cleaning from twice yearly to once every 2-3 years. We install several guard types and can recommend the best option for your home.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="Gutter Cleaning"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

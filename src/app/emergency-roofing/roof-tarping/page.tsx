@@ -25,6 +25,29 @@ export const metadata: Metadata = {
 };
 
 export default function RoofTarpingPage() {
+  const faqs = [
+    {
+      question: "How long does a roof tarp last?",
+      answer:
+        "Our commercial-grade tarps are rated for 90 days or more of continuous outdoor exposure. In practice, a well-installed tarp can protect your roof for several months. We recommend scheduling permanent repairs as soon as possible, but the tarp provides reliable protection while you coordinate with your insurance company and contractor.",
+    },
+    {
+      question: "How much does roof tarping cost in Chicago?",
+      answer:
+        "Professional roof tarping typically costs between $250 and $1,000 depending on the size of the area that needs coverage and the complexity of the roof geometry. This cost is almost always covered by homeowner's insurance as a damage mitigation expense.",
+    },
+    {
+      question: "Can I tarp my own roof?",
+      answer:
+        "While it is physically possible, we strongly advise against it for safety and effectiveness reasons. Climbing a damaged roof is dangerous, and improperly secured tarps often blow off in the first windstorm, leaving your home exposed again. Insurance companies may also question the adequacy of a DIY tarp installation.",
+    },
+    {
+      question: "Will a tarp damage my existing shingles?",
+      answer:
+        "Our installation method is designed to minimize impact on surrounding shingles. We use battens that distribute pressure across a wider area and place screws into decking rather than through good shingles whenever possible. Any minor fastener penetrations are sealed during permanent repairs.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +72,20 @@ export default function RoofTarpingPage() {
             },
           },
           serviceType: "Roof Tarping",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -125,29 +162,9 @@ Our tarping service includes a complete damage assessment and photographic docum
               "Storms do not wait for business hours and neither do we. Our tarping crews are available 24 hours a day, 7 days a week, 365 days a year.",
           },
         ]}
-        faqs={[
-          {
-            question: "How long does a roof tarp last?",
-            answer:
-              "Our commercial-grade tarps are rated for 90 days or more of continuous outdoor exposure. In practice, a well-installed tarp can protect your roof for several months. We recommend scheduling permanent repairs as soon as possible, but the tarp provides reliable protection while you coordinate with your insurance company and contractor.",
-          },
-          {
-            question: "How much does roof tarping cost in Chicago?",
-            answer:
-              "Professional roof tarping typically costs between $250 and $1,000 depending on the size of the area that needs coverage and the complexity of the roof geometry. This cost is almost always covered by homeowner's insurance as a damage mitigation expense.",
-          },
-          {
-            question: "Can I tarp my own roof?",
-            answer:
-              "While it is physically possible, we strongly advise against it for safety and effectiveness reasons. Climbing a damaged roof is dangerous, and improperly secured tarps often blow off in the first windstorm, leaving your home exposed again. Insurance companies may also question the adequacy of a DIY tarp installation.",
-          },
-          {
-            question: "Will a tarp damage my existing shingles?",
-            answer:
-              "Our installation method is designed to minimize impact on surrounding shingles. We use battens that distribute pressure across a wider area and place screws into decking rather than through good shingles whenever possible. Any minor fastener penetrations are sealed during permanent repairs.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="Roof Tarping"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

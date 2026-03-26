@@ -105,10 +105,10 @@ export default function CommercialRoofingHub() {
               Commercial roofing demands a different skill set than residential work. Flat and low-slope systems require precise membrane installation, proper drainage engineering, and an understanding of how HVAC units, skylights, and other rooftop equipment integrate with the waterproofing layer. Cornerstone Roofing Co. brings dedicated commercial expertise to every project, whether it involves a 5,000-square-foot retail space or a 100,000-square-foot industrial facility.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Chicago's commercial buildings face unique challenges. The city's extreme temperature range, from sub-zero winter lows to 95-degree summer highs, creates thermal cycling that stresses every seam and adhesion point in a flat roofing membrane. Heavy snow loads, standing water from poor drainage, and rooftop foot traffic from maintenance crews further test the system's durability.
+              Chicago&apos;s commercial buildings face unique challenges. The city&apos;s extreme temperature range, from sub-zero winter lows to 95-degree summer highs, creates thermal cycling that stresses every seam and adhesion point in a flat roofing membrane. Heavy snow loads, standing water from poor drainage, and rooftop foot traffic from maintenance crews further test the system&apos;s durability.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              We work with building owners, property managers, and facility directors to develop roofing plans that balance upfront cost, long-term durability, energy efficiency, and warranty coverage. Our commercial team is certified to install and warranty TPO, EPDM, modified bitumen, and built-up roofing systems from the industry's leading manufacturers.
+              We work with building owners, property managers, and facility directors to develop roofing plans that balance upfront cost, long-term durability, energy efficiency, and warranty coverage. Our commercial team is certified to install and warranty TPO, EPDM, modified bitumen, and built-up roofing systems from the industry&apos;s leading manufacturers.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

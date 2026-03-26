@@ -25,6 +25,29 @@ export const metadata: Metadata = {
 };
 
 export default function FlatRoofReplacementPage() {
+  const faqs = [
+    {
+      question: "How long does a commercial flat roof replacement take?",
+      answer:
+        "Timeline depends on the building size and system complexity. A 10,000-square-foot single-story commercial building typically takes 5-10 business days. Larger facilities or buildings with extensive rooftop equipment may take 2-4 weeks. We provide a detailed schedule before work begins.",
+    },
+    {
+      question: "Can my business stay open during a flat roof replacement?",
+      answer:
+        "Yes, in most cases. We stage materials and equipment to minimize disruption and can phase the work in sections to keep occupied areas protected. Noise levels are moderate, and we coordinate with your team to avoid conflicts with business-critical hours or events.",
+    },
+    {
+      question: "What is the best flat roof system for a commercial building in Chicago?",
+      answer:
+        "TPO is the most popular choice for its combination of energy efficiency, durability, and cost. EPDM is an excellent option for buildings where longevity and low maintenance are priorities. Modified bitumen excels on roofs with heavy foot traffic from maintenance crews. We help you evaluate options based on your specific building needs.",
+    },
+    {
+      question: "How much does commercial flat roof replacement cost per square foot?",
+      answer:
+        "In the Chicago market, commercial flat roof replacement typically ranges from $5 to $12 per square foot depending on the membrane type, insulation requirements, and tear-off conditions. TPO and EPDM generally fall at the lower end, while multi-layer modified bitumen and built-up systems are at the higher end.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +72,20 @@ export default function FlatRoofReplacementPage() {
             },
           },
           serviceType: "Flat Roof Replacement",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -130,29 +167,9 @@ We offer multiple membrane options to match your building's needs and budget. TP
               "New membranes require minimal maintenance for the first 10-15 years, saving thousands in annual repair and inspection costs compared to an aging system that needs constant attention.",
           },
         ]}
-        faqs={[
-          {
-            question: "How long does a commercial flat roof replacement take?",
-            answer:
-              "Timeline depends on the building size and system complexity. A 10,000-square-foot single-story commercial building typically takes 5-10 business days. Larger facilities or buildings with extensive rooftop equipment may take 2-4 weeks. We provide a detailed schedule before work begins.",
-          },
-          {
-            question: "Can my business stay open during a flat roof replacement?",
-            answer:
-              "Yes, in most cases. We stage materials and equipment to minimize disruption and can phase the work in sections to keep occupied areas protected. Noise levels are moderate, and we coordinate with your team to avoid conflicts with business-critical hours or events.",
-          },
-          {
-            question: "What is the best flat roof system for a commercial building in Chicago?",
-            answer:
-              "TPO is the most popular choice for its combination of energy efficiency, durability, and cost. EPDM is an excellent option for buildings where longevity and low maintenance are priorities. Modified bitumen excels on roofs with heavy foot traffic from maintenance crews. We help you evaluate options based on your specific building needs.",
-          },
-          {
-            question: "How much does commercial flat roof replacement cost per square foot?",
-            answer:
-              "In the Chicago market, commercial flat roof replacement typically ranges from $5 to $12 per square foot depending on the membrane type, insulation requirements, and tear-off conditions. TPO and EPDM generally fall at the lower end, while multi-layer modified bitumen and built-up systems are at the higher end.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="Flat Roof Replacement"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

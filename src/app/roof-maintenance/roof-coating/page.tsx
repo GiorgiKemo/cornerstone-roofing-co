@@ -25,6 +25,34 @@ export const metadata: Metadata = {
 };
 
 export default function RoofCoatingPage() {
+  const faqs = [
+    {
+      question: "What types of roofs can be coated?",
+      answer:
+        "Roof coatings work on most flat and low-slope roofing membranes including TPO, EPDM, modified bitumen, built-up roofing, and metal. The coating type must be compatible with the existing membrane, which is why we always test compatibility before recommending a specific product.",
+    },
+    {
+      question: "How long does a roof coating last?",
+      answer:
+        "A professionally applied roof coating typically provides 10-15 years of protection depending on the product, application thickness, and environmental conditions. At the end of that period, a maintenance recoat can extend performance for another cycle without removing the original coating.",
+    },
+    {
+      question: "Can you coat a roof that has some leaks?",
+      answer:
+        "Minor leaks caused by surface cracks and small seam separations can often be repaired as part of the surface preparation before coating. However, a coating is not a substitute for structural repairs. If the roof has significant membrane damage or saturated insulation, those issues must be addressed first.",
+    },
+    {
+      question: "How much does roof coating cost in Chicago?",
+      answer:
+        "Roof coating application typically costs $3 to $6 per square foot depending on the coating type, surface preparation requirements, and roof size. For a 10,000-square-foot commercial building, that translates to $30,000 to $60,000, compared to $60,000 to $100,000 or more for a full replacement.",
+    },
+    {
+      question: "Is roof coating a good investment for a building I plan to sell?",
+      answer:
+        "Yes. A recently coated roof with a 10-15 year warranty is a strong selling point in commercial real estate. It demonstrates proactive maintenance, reduces the buyer's near-term capital expenditure concerns, and the transferable warranty adds tangible value to the transaction.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +77,20 @@ export default function RoofCoatingPage() {
             },
           },
           serviceType: "Roof Coating",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -125,34 +167,9 @@ A coating application costs 30 to 50 percent less than a full roof replacement a
               "When the initial coating begins to wear after 10-15 years, an additional coat can be applied over the existing one, extending the roof's life yet again without a tear-off.",
           },
         ]}
-        faqs={[
-          {
-            question: "What types of roofs can be coated?",
-            answer:
-              "Roof coatings work on most flat and low-slope roofing membranes including TPO, EPDM, modified bitumen, built-up roofing, and metal. The coating type must be compatible with the existing membrane, which is why we always test compatibility before recommending a specific product.",
-          },
-          {
-            question: "How long does a roof coating last?",
-            answer:
-              "A professionally applied roof coating typically provides 10-15 years of protection depending on the product, application thickness, and environmental conditions. At the end of that period, a maintenance recoat can extend performance for another cycle without removing the original coating.",
-          },
-          {
-            question: "Can you coat a roof that has some leaks?",
-            answer:
-              "Minor leaks caused by surface cracks and small seam separations can often be repaired as part of the surface preparation before coating. However, a coating is not a substitute for structural repairs. If the roof has significant membrane damage or saturated insulation, those issues must be addressed first.",
-          },
-          {
-            question: "How much does roof coating cost in Chicago?",
-            answer:
-              "Roof coating application typically costs $3 to $6 per square foot depending on the coating type, surface preparation requirements, and roof size. For a 10,000-square-foot commercial building, that translates to $30,000 to $60,000, compared to $60,000 to $100,000 or more for a full replacement.",
-          },
-          {
-            question: "Is roof coating a good investment for a building I plan to sell?",
-            answer:
-              "Yes. A recently coated roof with a 10-15 year warranty is a strong selling point in commercial real estate. It demonstrates proactive maintenance, reduces the buyer's near-term capital expenditure concerns, and the transferable warranty adds tangible value to the transaction.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="Roof Coating"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

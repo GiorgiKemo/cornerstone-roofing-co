@@ -25,6 +25,29 @@ export const metadata: Metadata = {
 };
 
 export default function StormDamageSidingPage() {
+  const faqs = [
+    {
+      question: "Does homeowner's insurance cover storm damage to siding?",
+      answer:
+        "Yes. Most Illinois homeowner's insurance policies cover sudden storm damage to siding including hail strikes, wind damage, and debris impact. The damage must be caused by a covered weather event, not normal wear and aging. Cosmetic-only damage may be excluded by some policies, which is why professional documentation of functional damage is important.",
+    },
+    {
+      question: "Can I file a siding damage claim separately from my roof claim?",
+      answer:
+        "You can, but it is usually better to file both together under a single claim. This way you only pay one deductible and the adjuster evaluates the entire exterior in one visit. If you have already filed a roof-only claim, we can help you file a supplement to add siding damage to the existing claim.",
+    },
+    {
+      question: "How can you match my existing siding for a partial replacement?",
+      answer:
+        "We maintain relationships with all major siding manufacturers and distributors and can source matching profiles and colors for most products currently in production. For discontinued colors, we identify the closest available match. In some cases, the insurance claim may cover a full re-side if a reasonable color match is not achievable.",
+    },
+    {
+      question: "What if my insurance company says the siding damage is cosmetic?",
+      answer:
+        "Some insurers attempt to classify hail damage as cosmetic to reduce payouts. Our documentation specifically addresses functional impact, including cracks that allow moisture infiltration, weakened structural integrity, and reduced weather protection. If needed, we can request a re-inspection with our team present to demonstrate the functional nature of the damage.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +72,20 @@ export default function StormDamageSidingPage() {
             },
           },
           serviceType: "Storm Damage Siding Claims",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -125,29 +162,9 @@ Cornerstone Roofing Co. inspects all four elevations of your home after storm ev
               "Replacement siding sections are installed to manufacturer specifications and carry full product warranties, ensuring your home is protected for years to come.",
           },
         ]}
-        faqs={[
-          {
-            question: "Does homeowner's insurance cover storm damage to siding?",
-            answer:
-              "Yes. Most Illinois homeowner's insurance policies cover sudden storm damage to siding including hail strikes, wind damage, and debris impact. The damage must be caused by a covered weather event, not normal wear and aging. Cosmetic-only damage may be excluded by some policies, which is why professional documentation of functional damage is important.",
-          },
-          {
-            question: "Can I file a siding damage claim separately from my roof claim?",
-            answer:
-              "You can, but it is usually better to file both together under a single claim. This way you only pay one deductible and the adjuster evaluates the entire exterior in one visit. If you have already filed a roof-only claim, we can help you file a supplement to add siding damage to the existing claim.",
-          },
-          {
-            question: "How can you match my existing siding for a partial replacement?",
-            answer:
-              "We maintain relationships with all major siding manufacturers and distributors and can source matching profiles and colors for most products currently in production. For discontinued colors, we identify the closest available match. In some cases, the insurance claim may cover a full re-side if a reasonable color match is not achievable.",
-          },
-          {
-            question: "What if my insurance company says the siding damage is cosmetic?",
-            answer:
-              "Some insurers attempt to classify hail damage as cosmetic to reduce payouts. Our documentation specifically addresses functional impact, including cracks that allow moisture infiltration, weakened structural integrity, and reduced weather protection. If needed, we can request a re-inspection with our team present to demonstrate the functional nature of the damage.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="Storm Damage Siding Claims"
+        serviceCategory="siding"
       />
       <Footer />
     </div>

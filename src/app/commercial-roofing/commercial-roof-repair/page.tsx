@@ -25,6 +25,29 @@ export const metadata: Metadata = {
 };
 
 export default function CommercialRoofRepairPage() {
+  const faqs = [
+    {
+      question: "How quickly can you repair a commercial roof leak in Chicago?",
+      answer:
+        "For active leaks affecting business operations, we offer same-day and next-day response. Non-emergency commercial repairs are typically scheduled within one week. We coordinate timing with your facility management team to minimize operational impact.",
+    },
+    {
+      question: "Can you repair a commercial roof while the building is occupied?",
+      answer:
+        "Yes. Most commercial roof repairs are performed from the roof surface with no disruption to interior operations. For repairs that involve odor-producing materials like torch-applied modified bitumen, we schedule work during off-hours or ensure adequate ventilation separation.",
+    },
+    {
+      question: "How much does commercial roof repair cost?",
+      answer:
+        "Commercial repair costs depend on the membrane type, damage extent, and accessibility. Simple puncture or seam repairs typically range from $500 to $2,000. Larger area repairs involving insulation replacement or multiple penetrations can range from $2,000 to $10,000. We provide detailed estimates before beginning work.",
+    },
+    {
+      question: "Should I repair or replace my commercial roof?",
+      answer:
+        "This depends on the overall condition, age, and extent of the current damage. If the membrane is generally sound and the damage is localized, repair is cost-effective. If core cuts reveal saturated insulation across a wide area, or if the membrane has reached the end of its service life, replacement provides better long-term value. We provide honest guidance based on what we find.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +72,20 @@ export default function CommercialRoofRepairPage() {
             },
           },
           serviceType: "Commercial Roof Repair",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -125,29 +162,9 @@ Our commercial repair service goes beyond patching the immediate problem. We per
               "Timely, professional repairs prevent small issues from cascading into system-wide failures, extending the years of service you get from your current commercial roof.",
           },
         ]}
-        faqs={[
-          {
-            question: "How quickly can you repair a commercial roof leak in Chicago?",
-            answer:
-              "For active leaks affecting business operations, we offer same-day and next-day response. Non-emergency commercial repairs are typically scheduled within one week. We coordinate timing with your facility management team to minimize operational impact.",
-          },
-          {
-            question: "Can you repair a commercial roof while the building is occupied?",
-            answer:
-              "Yes. Most commercial roof repairs are performed from the roof surface with no disruption to interior operations. For repairs that involve odor-producing materials like torch-applied modified bitumen, we schedule work during off-hours or ensure adequate ventilation separation.",
-          },
-          {
-            question: "How much does commercial roof repair cost?",
-            answer:
-              "Commercial repair costs depend on the membrane type, damage extent, and accessibility. Simple puncture or seam repairs typically range from $500 to $2,000. Larger area repairs involving insulation replacement or multiple penetrations can range from $2,000 to $10,000. We provide detailed estimates before beginning work.",
-          },
-          {
-            question: "Should I repair or replace my commercial roof?",
-            answer:
-              "This depends on the overall condition, age, and extent of the current damage. If the membrane is generally sound and the damage is localized, repair is cost-effective. If core cuts reveal saturated insulation across a wide area, or if the membrane has reached the end of its service life, replacement provides better long-term value. We provide honest guidance based on what we find.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="Commercial Roof Repair"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

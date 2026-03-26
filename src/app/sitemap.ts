@@ -8,7 +8,8 @@ const roofingCitySlugs = [
   "berwyn", "oak-lawn", "tinley-park", "orland-park", "palatine",
   "des-plaines", "mount-prospect", "hoffman-estates", "glenview",
   "wheaton", "downers-grove", "lombard", "elmhurst", "skokie",
-  "park-ridge", "niles",
+  "park-ridge", "niles", "plainfield", "elk-grove-village",
+  "buffalo-grove", "crystal-lake",
 ];
 
 const sidingCitySlugs = [

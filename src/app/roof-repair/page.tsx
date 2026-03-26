@@ -51,6 +51,20 @@ export default function RoofRepairPage() {
           serviceType: "Roof Repair",
         }}
       />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: service.sections.faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.a,
+            },
+          })),
+        }}
+      />
       <ServicePageTemplate
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -75,6 +89,7 @@ export default function RoofRepairPage() {
           { title: "24-Hour Roofer", href: "/emergency-roofing/24-hour-roofer" },
         ]}
         serviceName="Roof Repair"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>
