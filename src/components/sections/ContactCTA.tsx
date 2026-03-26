@@ -136,7 +136,9 @@ export default function ContactCTA({ service, city }: ContactCTAProps) {
                 required
                 className={`${inputClass} mb-4`}
               />
+              <label htmlFor="contact-service" className="sr-only">Service</label>
               <select
+                id="contact-service"
                 name="service"
                 defaultValue={service || ""}
                 required

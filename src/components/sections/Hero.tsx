@@ -14,6 +14,8 @@ export default function Hero() {
           src="/images/hero-roof.jpg"
           alt="Beautiful home with new roof at sunset"
           fill
+          sizes="100vw"
+          quality={80}
           className="object-cover"
           priority
         />
