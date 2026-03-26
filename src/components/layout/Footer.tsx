@@ -37,11 +37,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-not-scrolled.png"
               alt="Cornerstone Roofing Co."
-              width={56}
-              height={56}
-              className="h-14 w-auto rounded mb-4"
+              width={96}
+              height={96}
+              className="h-16 w-auto mb-4"
             />
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
               Chicagoland&apos;s trusted roofing contractor. Quality
