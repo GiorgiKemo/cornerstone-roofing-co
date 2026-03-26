@@ -38,7 +38,7 @@ export default function ServiceAreas() {
               href={`/roofing-${city.slug}`}
               className="group flex items-center gap-2 bg-card rounded-lg px-4 py-3 border border-border hover:border-secondary/50 hover:shadow-md transition-all duration-300"
             >
-              <MapPin className="w-4 h-4 text-secondary flex-shrink-0" />
+              <MapPin className="w-4 h-4 text-secondary shrink-0" />
               <span className="font-medium text-sm text-foreground group-hover:text-secondary transition-colors">
                 {city.name}
               </span>
@@ -46,9 +46,9 @@ export default function ServiceAreas() {
           ))}
           <Link
             href="/#contact"
-            className="group flex items-center justify-center gap-2 bg-secondary/10 rounded-lg px-4 py-3 border border-secondary/20 hover:bg-secondary hover:shadow-md transition-all duration-300"
+            className="group flex items-center justify-center gap-2 bg-secondary rounded-lg px-4 py-3 border border-secondary hover:opacity-90 hover:shadow-md transition-all duration-300"
           >
-            <span className="font-semibold text-sm text-secondary group-hover:text-secondary-foreground transition-colors">
+            <span className="font-semibold text-sm text-secondary-foreground">
               Don&apos;t See Your Area? Contact Us &rarr;
             </span>
           </Link>

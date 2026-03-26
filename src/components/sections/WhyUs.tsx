@@ -116,11 +116,11 @@ export default function WhyUs() {
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
                 className="flex gap-3 p-4 rounded-lg hover:bg-muted/50 transition-colors duration-300"
               >
-                <reason.icon className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
+                <reason.icon className="w-6 h-6 text-secondary shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-heading font-bold text-foreground mb-1">
+                  <h3 className="font-heading font-bold text-foreground mb-1">
                     {reason.title}
-                  </h4>
+                  </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {reason.description}
                   </p>

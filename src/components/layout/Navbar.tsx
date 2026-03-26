@@ -104,13 +104,22 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/images/logo.png"
-            alt="Cornerstone Roofing Co."
-            width={96}
-            height={96}
-            className="h-14 md:h-20 w-auto hover:scale-105 transition-all duration-300 cursor-pointer"
-          />
+          <div className="relative h-14 md:h-20 w-14 md:w-20">
+            <Image
+              src="/images/logo.png"
+              alt="Cornerstone Roofing Co."
+              width={96}
+              height={96}
+              className={`absolute inset-0 h-full w-auto hover:scale-105 transition-all duration-300 cursor-pointer ${scrolled ? "opacity-100" : "opacity-0"}`}
+            />
+            <Image
+              src="/images/logo-not-scrolled.png"
+              alt="Cornerstone Roofing Co."
+              width={96}
+              height={96}
+              className={`absolute inset-0 h-full w-auto hover:scale-105 transition-all duration-300 cursor-pointer ${scrolled ? "opacity-0" : "opacity-100"}`}
+            />
+          </div>
         </Link>
 
         {/* Desktop nav */}
@@ -189,6 +198,7 @@ export default function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
           className={`md:hidden p-2 ${
             scrolled ? "text-foreground" : "text-primary-foreground"
           }`}

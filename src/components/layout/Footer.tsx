@@ -132,7 +132,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-primary-foreground/10 pt-8 text-center">
-          <p className="text-primary-foreground/40 text-sm">
+          <p className="text-primary-foreground/60 text-sm">
             &copy; 2026 Cornerstone Roofing Co. All rights reserved.
           </p>
         </div>
