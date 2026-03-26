@@ -25,6 +25,34 @@ export const metadata: Metadata = {
 };
 
 export default function FreeRoofEstimatePage() {
+  const faqs = [
+    {
+      question: "Is the roof estimate really free?",
+      answer:
+        "Yes, completely free. There is no hidden fee, trip charge, or obligation of any kind. We provide the estimate, deliver a written proposal, and the decision to move forward is entirely yours on your timeline.",
+    },
+    {
+      question: "How long does a roof estimate appointment take?",
+      answer:
+        "A typical estimate visit takes 30-45 minutes for a standard residential roof. Larger homes, commercial buildings, or properties with complex roof geometry may take up to an hour. The written estimate is delivered within 24-48 hours after the visit.",
+    },
+    {
+      question: "Can I get estimates from multiple contractors?",
+      answer:
+        "Absolutely, and we encourage it. Comparing estimates is a smart approach to any major home investment. When comparing, look beyond the bottom-line price and compare materials specified, warranty terms, licensing, insurance coverage, and online reviews.",
+    },
+    {
+      question: "Do you provide estimates for insurance claims?",
+      answer:
+        "Yes. Our free estimate includes storm damage assessment when applicable. If damage is found, we prepare Xactimate-formatted documentation that aligns with insurance industry standards, giving you everything you need to file or support your claim.",
+    },
+    {
+      question: "How accurate are your estimates?",
+      answer:
+        "Our estimates are based on precise measurements and current material pricing. The final cost matches the estimate in the vast majority of cases. If unforeseen conditions are discovered during the project, such as hidden deck damage, we discuss the additional cost with you and obtain approval before proceeding.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +77,20 @@ export default function FreeRoofEstimatePage() {
             },
           },
           serviceType: "Free Roof Estimate",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -125,34 +167,9 @@ Our pricing reflects the true cost of professional roofing work performed by lic
               "If your roof does not need work, we will tell you. If a repair can extend its life by several years, we recommend that over a replacement. Our reputation depends on honesty.",
           },
         ]}
-        faqs={[
-          {
-            question: "Is the roof estimate really free?",
-            answer:
-              "Yes, completely free. There is no hidden fee, trip charge, or obligation of any kind. We provide the estimate, deliver a written proposal, and the decision to move forward is entirely yours on your timeline.",
-          },
-          {
-            question: "How long does a roof estimate appointment take?",
-            answer:
-              "A typical estimate visit takes 30-45 minutes for a standard residential roof. Larger homes, commercial buildings, or properties with complex roof geometry may take up to an hour. The written estimate is delivered within 24-48 hours after the visit.",
-          },
-          {
-            question: "Can I get estimates from multiple contractors?",
-            answer:
-              "Absolutely, and we encourage it. Comparing estimates is a smart approach to any major home investment. When comparing, look beyond the bottom-line price and compare materials specified, warranty terms, licensing, insurance coverage, and online reviews.",
-          },
-          {
-            question: "Do you provide estimates for insurance claims?",
-            answer:
-              "Yes. Our free estimate includes storm damage assessment when applicable. If damage is found, we prepare Xactimate-formatted documentation that aligns with insurance industry standards, giving you everything you need to file or support your claim.",
-          },
-          {
-            question: "How accurate are your estimates?",
-            answer:
-              "Our estimates are based on precise measurements and current material pricing. The final cost matches the estimate in the vast majority of cases. If unforeseen conditions are discovered during the project, such as hidden deck damage, we discuss the additional cost with you and obtain approval before proceeding.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="Free Roof Estimate"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

@@ -25,6 +25,29 @@ export const metadata: Metadata = {
 };
 
 export default function TPORoofingPage() {
+  const faqs = [
+    {
+      question: "What is TPO roofing?",
+      answer:
+        "TPO stands for Thermoplastic Polyolefin. It is a single-ply reflective roofing membrane made from a blend of polypropylene and ethylene-propylene rubber. TPO membranes are manufactured in large rolls, installed in overlapping sheets, and heat-welded at the seams to create a continuous waterproof surface.",
+    },
+    {
+      question: "How long does a TPO roof last in Chicago?",
+      answer:
+        "A properly installed TPO roof with quality materials typically lasts 20-30 years in Chicago's climate. Membrane thickness matters: 60-mil and 80-mil TPO systems generally outlast 45-mil installations. Regular maintenance and prompt repair of any damage can extend service life further.",
+    },
+    {
+      question: "Is TPO better than EPDM for commercial roofing?",
+      answer:
+        "TPO and EPDM each have advantages. TPO offers superior energy efficiency due to its reflective surface and has heat-welded seams that are stronger than EPDM's adhesive seams. EPDM has a longer track record and tends to perform better in very cold temperatures. For most Chicago commercial buildings, TPO provides the best overall value, but we evaluate each building individually.",
+    },
+    {
+      question: "How much does TPO roofing cost for a commercial building?",
+      answer:
+        "TPO roofing installation in the Chicago market typically costs $6 to $10 per square foot for a complete tear-off and replacement, depending on membrane thickness, insulation requirements, and building complexity. A 10,000-square-foot building would range from $60,000 to $100,000. We provide free estimates tailored to your specific building.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +72,20 @@ export default function TPORoofingPage() {
             },
           },
           serviceType: "TPO Roofing",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -130,29 +167,9 @@ TPO membranes are available in 45-mil, 60-mil, and 80-mil thicknesses. For Chica
               "TPO membranes are 100% recyclable at the end of their service life, and their energy-saving properties reduce your building's carbon footprint throughout their decades of use.",
           },
         ]}
-        faqs={[
-          {
-            question: "What is TPO roofing?",
-            answer:
-              "TPO stands for Thermoplastic Polyolefin. It is a single-ply reflective roofing membrane made from a blend of polypropylene and ethylene-propylene rubber. TPO membranes are manufactured in large rolls, installed in overlapping sheets, and heat-welded at the seams to create a continuous waterproof surface.",
-          },
-          {
-            question: "How long does a TPO roof last in Chicago?",
-            answer:
-              "A properly installed TPO roof with quality materials typically lasts 20-30 years in Chicago's climate. Membrane thickness matters: 60-mil and 80-mil TPO systems generally outlast 45-mil installations. Regular maintenance and prompt repair of any damage can extend service life further.",
-          },
-          {
-            question: "Is TPO better than EPDM for commercial roofing?",
-            answer:
-              "TPO and EPDM each have advantages. TPO offers superior energy efficiency due to its reflective surface and has heat-welded seams that are stronger than EPDM's adhesive seams. EPDM has a longer track record and tends to perform better in very cold temperatures. For most Chicago commercial buildings, TPO provides the best overall value, but we evaluate each building individually.",
-          },
-          {
-            question: "How much does TPO roofing cost for a commercial building?",
-            answer:
-              "TPO roofing installation in the Chicago market typically costs $6 to $10 per square foot for a complete tear-off and replacement, depending on membrane thickness, insulation requirements, and building complexity. A 10,000-square-foot building would range from $60,000 to $100,000. We provide free estimates tailored to your specific building.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="TPO Roofing"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

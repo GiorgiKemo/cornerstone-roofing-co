@@ -12,12 +12,14 @@ const serviceLinks = [
 ];
 
 const areaLinks = [
-  { label: "Chicago", href: "/roofing-chicago" },
-  { label: "Naperville", href: "/roofing-naperville" },
-  { label: "Schaumburg", href: "/roofing-schaumburg" },
-  { label: "Aurora", href: "/roofing-aurora" },
-  { label: "Joliet", href: "/roofing-joliet" },
-  { label: "Bolingbrook", href: "/roofing-bolingbrook" },
+  { label: "Roofing in Chicago", href: "/roofing-chicago" },
+  { label: "Roofing in Naperville", href: "/roofing-naperville" },
+  { label: "Roofing in Schaumburg", href: "/roofing-schaumburg" },
+  { label: "Roofing in Aurora", href: "/roofing-aurora" },
+  { label: "Roofing in Joliet", href: "/roofing-joliet" },
+  { label: "Roofing in Arlington Hts", href: "/roofing-arlington-heights" },
+  { label: "Siding in Chicago", href: "/siding-chicago" },
+  { label: "Siding in Naperville", href: "/siding-naperville" },
 ];
 
 const resourceLinks = [

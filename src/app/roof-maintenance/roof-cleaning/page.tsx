@@ -25,6 +25,29 @@ export const metadata: Metadata = {
 };
 
 export default function RoofCleaningPage() {
+  const faqs = [
+    {
+      question: "Will roof cleaning damage my shingles?",
+      answer:
+        "Not when done correctly. Our soft wash method applies cleaning solution at low pressure, similar to a garden hose, which kills organic growth without disturbing the granule layer. High-pressure power washing can damage shingles and should never be used on an asphalt roof. We follow ARMA's recommended cleaning protocol.",
+    },
+    {
+      question: "How often should I have my roof cleaned in Chicago?",
+      answer:
+        "For most Chicago homes, we recommend roof cleaning every 3-5 years, or whenever dark streaks or moss growth become visible. Homes with heavy tree canopy coverage or north-facing slopes that stay shaded may need more frequent cleaning.",
+    },
+    {
+      question: "How much does roof cleaning cost in Chicago?",
+      answer:
+        "Professional roof cleaning for a typical Chicago-area home ranges from $350 to $700 depending on the roof size, slope, and severity of biological growth. This is a modest investment compared to the cost of the premature roof replacement that neglected organic growth can cause.",
+    },
+    {
+      question: "Can I clean my roof myself?",
+      answer:
+        "We advise against it for safety and effectiveness reasons. Walking on a wet, sloped roof is extremely dangerous, and consumer-grade cleaning products often lack the concentration needed to kill moss at the root level. Improper technique can also damage shingles or void your warranty.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +72,20 @@ export default function RoofCleaningPage() {
             },
           },
           serviceType: "Roof Cleaning",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -125,29 +162,9 @@ Our cleaning service includes debris removal from valleys, behind dormers, and a
               "During every cleaning, our crew notes any damaged shingles, deteriorated flashing, or other issues they observe, giving you an early warning before small problems grow.",
           },
         ]}
-        faqs={[
-          {
-            question: "Will roof cleaning damage my shingles?",
-            answer:
-              "Not when done correctly. Our soft wash method applies cleaning solution at low pressure, similar to a garden hose, which kills organic growth without disturbing the granule layer. High-pressure power washing can damage shingles and should never be used on an asphalt roof. We follow ARMA's recommended cleaning protocol.",
-          },
-          {
-            question: "How often should I have my roof cleaned in Chicago?",
-            answer:
-              "For most Chicago homes, we recommend roof cleaning every 3-5 years, or whenever dark streaks or moss growth become visible. Homes with heavy tree canopy coverage or north-facing slopes that stay shaded may need more frequent cleaning.",
-          },
-          {
-            question: "How much does roof cleaning cost in Chicago?",
-            answer:
-              "Professional roof cleaning for a typical Chicago-area home ranges from $350 to $700 depending on the roof size, slope, and severity of biological growth. This is a modest investment compared to the cost of the premature roof replacement that neglected organic growth can cause.",
-          },
-          {
-            question: "Can I clean my roof myself?",
-            answer:
-              "We advise against it for safety and effectiveness reasons. Walking on a wet, sloped roof is extremely dangerous, and consumer-grade cleaning products often lack the concentration needed to kill moss at the root level. Improper technique can also damage shingles or void your warranty.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="Roof Cleaning"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

@@ -25,6 +25,34 @@ export const metadata: Metadata = {
 };
 
 export default function HailDamageClaimPage() {
+  const faqs = [
+    {
+      question: "How do I know if my roof has hail damage?",
+      answer:
+        "Hail damage on asphalt shingles appears as dark bruises, dents, or granule displacement that may not be visible from the ground. Dented gutters, downspouts, and aluminum window frames are ground-level indicators that hail was large enough to damage roof materials. After any significant hail event in your area, a professional inspection is the only reliable way to assess your roof.",
+    },
+    {
+      question: "How long after a hailstorm can I file an insurance claim?",
+      answer:
+        "Most Illinois homeowner's policies require claims to be filed within one year of the damage event. However, we strongly recommend filing within 30-60 days because damage evidence is freshest, matching it to a specific storm event is easiest, and your insurer is less likely to question the timing of your claim.",
+    },
+    {
+      question: "Will my insurance rates increase if I file a hail damage claim?",
+      answer:
+        "Illinois law prohibits insurance companies from raising your individual premiums solely because you filed a weather-related claim. Your rates may adjust based on regional factors, but a single hail claim should not trigger a personal rate increase.",
+    },
+    {
+      question: "What size hail causes roof damage?",
+      answer:
+        "Hailstones as small as one inch in diameter (quarter-sized) can damage asphalt shingles under the right conditions. Wind-driven hail, aged shingles, and steep impact angles can cause damage from even smaller hailstones. Hail of 1.5 inches or larger almost always causes significant damage to standard shingle roofs.",
+    },
+    {
+      question: "Do I have to use the insurance company's recommended contractor?",
+      answer:
+        "No. In Illinois, you have the legal right to choose your own contractor for insurance-covered repairs. Insurance companies may suggest preferred vendors, but you are never obligated to use them. Choosing an independent contractor like Cornerstone ensures your interests are represented, not the insurance company's.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +77,20 @@ export default function HailDamageClaimPage() {
             },
           },
           serviceType: "Hail Damage Insurance Claim Assistance",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -125,34 +167,9 @@ If we find hail damage that meets the threshold for a valid insurance claim, we 
               "Insurance claim work receives the same premium materials and installation standards as any other Cornerstone project, backed by manufacturer warranties and our workmanship guarantee.",
           },
         ]}
-        faqs={[
-          {
-            question: "How do I know if my roof has hail damage?",
-            answer:
-              "Hail damage on asphalt shingles appears as dark bruises, dents, or granule displacement that may not be visible from the ground. Dented gutters, downspouts, and aluminum window frames are ground-level indicators that hail was large enough to damage roof materials. After any significant hail event in your area, a professional inspection is the only reliable way to assess your roof.",
-          },
-          {
-            question: "How long after a hailstorm can I file an insurance claim?",
-            answer:
-              "Most Illinois homeowner's policies require claims to be filed within one year of the damage event. However, we strongly recommend filing within 30-60 days because damage evidence is freshest, matching it to a specific storm event is easiest, and your insurer is less likely to question the timing of your claim.",
-          },
-          {
-            question: "Will my insurance rates increase if I file a hail damage claim?",
-            answer:
-              "Illinois law prohibits insurance companies from raising your individual premiums solely because you filed a weather-related claim. Your rates may adjust based on regional factors, but a single hail claim should not trigger a personal rate increase.",
-          },
-          {
-            question: "What size hail causes roof damage?",
-            answer:
-              "Hailstones as small as one inch in diameter (quarter-sized) can damage asphalt shingles under the right conditions. Wind-driven hail, aged shingles, and steep impact angles can cause damage from even smaller hailstones. Hail of 1.5 inches or larger almost always causes significant damage to standard shingle roofs.",
-          },
-          {
-            question: "Do I have to use the insurance company's recommended contractor?",
-            answer:
-              "No. In Illinois, you have the legal right to choose your own contractor for insurance-covered repairs. Insurance companies may suggest preferred vendors, but you are never obligated to use them. Choosing an independent contractor like Cornerstone ensures your interests are represented, not the insurance company's.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="Hail Damage Claims"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

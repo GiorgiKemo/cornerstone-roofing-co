@@ -3,10 +3,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
-import { Phone, ArrowRight, CheckCircle } from "lucide-react";
+import { Phone, ArrowRight, CheckCircle, MapPin } from "lucide-react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactCTA from "@/components/sections/ContactCTA";
+import { roofingCities, sidingCities } from "@/data/cities";
+
+const topRoofingCities = roofingCities.slice(0, 10);
+const topSidingCities = sidingCities.slice(0, 10);
 
 interface ServicePageProps {
   breadcrumbs: Array<{ label: string; href?: string }>;
@@ -18,6 +22,7 @@ interface ServicePageProps {
   faqs?: Array<{ question: string; answer: string }>;
   relatedPages?: Array<{ title: string; href: string }>;
   serviceName?: string;
+  serviceCategory?: "roofing" | "siding";
 }
 
 export default function ServicePageTemplate({
@@ -30,6 +35,7 @@ export default function ServicePageTemplate({
   faqs,
   relatedPages,
   serviceName,
+  serviceCategory,
 }: ServicePageProps) {
   const heroRef = useRef(null);
   const heroInView = useInView(heroRef, { once: true });
@@ -192,6 +198,34 @@ export default function ServicePageTemplate({
                     {page.title}
                   </span>
                   <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-secondary group-hover:translate-x-1 transition-all" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Service Areas */}
+      {serviceCategory && (
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl font-heading font-bold text-foreground mb-3 text-center">
+              Available in Your Area
+            </h2>
+            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-8">
+              We provide {serviceName?.toLowerCase() || "this service"} across Chicagoland.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+              {(serviceCategory === "roofing" ? topRoofingCities : topSidingCities).map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/${serviceCategory}-${city.slug}`}
+                  className="group inline-flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-2.5 hover:border-secondary/50 hover:shadow-md transition-all"
+                >
+                  <MapPin className="w-3.5 h-3.5 text-secondary shrink-0" />
+                  <span className="text-sm font-medium text-foreground group-hover:text-secondary transition-colors">
+                    {city.name}
+                  </span>
                 </Link>
               ))}
             </div>

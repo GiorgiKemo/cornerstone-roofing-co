@@ -25,6 +25,34 @@ export const metadata: Metadata = {
 };
 
 export default function TwentyFourHourRooferPage() {
+  const faqs = [
+    {
+      question: "Do you really answer the phone 24 hours a day?",
+      answer:
+        "Yes. Our emergency dispatch line is staffed by live personnel around the clock, 365 days a year. We do not use an answering service or automated system for emergency calls. When you call, a real person answers, assesses your situation, and dispatches a crew.",
+    },
+    {
+      question: "What areas do you serve for 24-hour emergency roofing?",
+      answer:
+        "We serve the entire Chicago metropolitan area including Cook County, DuPage County, Will County, Kane County, and Lake County. This covers Chicago proper and all surrounding suburbs from Waukegan to Joliet and from Aurora to the Indiana border.",
+    },
+    {
+      question: "Can you do permanent repairs at night, or only tarping?",
+      answer:
+        "It depends on the situation. Many repairs can be completed at night with our truck-mounted lighting. For complex repairs that require full daylight for safety and quality reasons, we stabilize the roof with tarping and schedule the permanent repair for the earliest available daylight slot.",
+    },
+    {
+      question: "Should I try to tarp my roof myself while waiting for your crew?",
+      answer:
+        "We strongly advise against climbing on a damaged roof, especially during a storm or at night. The risk of falls, electrocution from downed lines, and structural collapse is too high. If water is entering your home, move belongings away from the leak, place containers to catch water, and wait for our professional crew to arrive safely.",
+    },
+    {
+      question: "How do I know if my situation is a true emergency?",
+      answer:
+        "If water is actively entering your home, if a large section of your roof is missing or visibly damaged, if a tree or large branch has struck your roof, or if you can see daylight through your roof from inside the attic, call us immediately. When in doubt, call. We would rather assess your situation and tell you it can wait until morning than have you endure hours of preventable damage.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +77,20 @@ export default function TwentyFourHourRooferPage() {
             },
           },
           serviceType: "24-Hour Emergency Roofing",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -125,34 +167,9 @@ We serve the entire Chicago metropolitan area including all of Cook County, DuPa
               "Emergency stabilization flows directly into our standard repair or replacement process, with a single project manager overseeing the entire job from first call to final walkthrough.",
           },
         ]}
-        faqs={[
-          {
-            question: "Do you really answer the phone 24 hours a day?",
-            answer:
-              "Yes. Our emergency dispatch line is staffed by live personnel around the clock, 365 days a year. We do not use an answering service or automated system for emergency calls. When you call, a real person answers, assesses your situation, and dispatches a crew.",
-          },
-          {
-            question: "What areas do you serve for 24-hour emergency roofing?",
-            answer:
-              "We serve the entire Chicago metropolitan area including Cook County, DuPage County, Will County, Kane County, and Lake County. This covers Chicago proper and all surrounding suburbs from Waukegan to Joliet and from Aurora to the Indiana border.",
-          },
-          {
-            question: "Can you do permanent repairs at night, or only tarping?",
-            answer:
-              "It depends on the situation. Many repairs can be completed at night with our truck-mounted lighting. For complex repairs that require full daylight for safety and quality reasons, we stabilize the roof with tarping and schedule the permanent repair for the earliest available daylight slot.",
-          },
-          {
-            question: "Should I try to tarp my roof myself while waiting for your crew?",
-            answer:
-              "We strongly advise against climbing on a damaged roof, especially during a storm or at night. The risk of falls, electrocution from downed lines, and structural collapse is too high. If water is entering your home, move belongings away from the leak, place containers to catch water, and wait for our professional crew to arrive safely.",
-          },
-          {
-            question: "How do I know if my situation is a true emergency?",
-            answer:
-              "If water is actively entering your home, if a large section of your roof is missing or visibly damaged, if a tree or large branch has struck your roof, or if you can see daylight through your roof from inside the attic, call us immediately. When in doubt, call. We would rather assess your situation and tell you it can wait until morning than have you endure hours of preventable damage.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="24-Hour Emergency Roofing"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

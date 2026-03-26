@@ -25,6 +25,34 @@ export const metadata: Metadata = {
 };
 
 export default function RoofLeakRepairPage() {
+  const faqs = [
+    {
+      question: "Why does my roof leak only during heavy rain?",
+      answer:
+        "Some leaks only manifest when rain volume or wind-driven rain angle exceeds a threshold that normal rainfall does not reach. This is common with worn valley flashing, aging pipe boot seals, and gaps in step flashing along walls and chimneys. The defect is always present, but it only allows water entry under specific conditions.",
+    },
+    {
+      question: "Can a roof leak cause mold in my attic?",
+      answer:
+        "Yes, and it happens faster than most homeowners realize. Mold spores begin actively growing on wet organic materials like wood and insulation within 24-48 hours of sustained moisture exposure. If you suspect a roof leak, addressing it quickly is essential to avoid a separate and expensive mold remediation project.",
+    },
+    {
+      question: "My roof is only 5 years old. Why is it leaking?",
+      answer:
+        "Age alone does not prevent leaks. Common causes on newer roofs include improper flashing installation, missed sealant at penetrations, incorrect shingle nailing patterns that allow wind-driven rain entry, and manufacturing defects. If your roof is under warranty, the repair may be covered at no cost.",
+    },
+    {
+      question: "How much does roof leak repair cost in Chicago?",
+      answer:
+        "Simple leak repairs such as resealing a pipe boot or replacing a few damaged shingles typically range from $200 to $600. More complex repairs involving flashing replacement, valley work, or multiple penetration points can range from $600 to $2,000. We provide transparent pricing before beginning any work.",
+    },
+    {
+      question: "Do you repair flat roof leaks?",
+      answer:
+        "Yes. Flat and low-slope roof leaks are among our most frequent repair calls in Chicago. We service modified bitumen, TPO, EPDM, and built-up roofing systems found on bungalows, two-flats, and commercial buildings throughout the city and suburbs.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +77,20 @@ export default function RoofLeakRepairPage() {
             },
           },
           serviceType: "Roof Leak Repair",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -125,34 +167,9 @@ Ignoring a roof leak, even a small one, is a costly mistake. Within 48 hours of 
               "Every leak repair comes with our workmanship warranty. If the leak recurs from the same point, we return and fix it at no additional charge.",
           },
         ]}
-        faqs={[
-          {
-            question: "Why does my roof leak only during heavy rain?",
-            answer:
-              "Some leaks only manifest when rain volume or wind-driven rain angle exceeds a threshold that normal rainfall does not reach. This is common with worn valley flashing, aging pipe boot seals, and gaps in step flashing along walls and chimneys. The defect is always present, but it only allows water entry under specific conditions.",
-          },
-          {
-            question: "Can a roof leak cause mold in my attic?",
-            answer:
-              "Yes, and it happens faster than most homeowners realize. Mold spores begin actively growing on wet organic materials like wood and insulation within 24-48 hours of sustained moisture exposure. If you suspect a roof leak, addressing it quickly is essential to avoid a separate and expensive mold remediation project.",
-          },
-          {
-            question: "My roof is only 5 years old. Why is it leaking?",
-            answer:
-              "Age alone does not prevent leaks. Common causes on newer roofs include improper flashing installation, missed sealant at penetrations, incorrect shingle nailing patterns that allow wind-driven rain entry, and manufacturing defects. If your roof is under warranty, the repair may be covered at no cost.",
-          },
-          {
-            question: "How much does roof leak repair cost in Chicago?",
-            answer:
-              "Simple leak repairs such as resealing a pipe boot or replacing a few damaged shingles typically range from $200 to $600. More complex repairs involving flashing replacement, valley work, or multiple penetration points can range from $600 to $2,000. We provide transparent pricing before beginning any work.",
-          },
-          {
-            question: "Do you repair flat roof leaks?",
-            answer:
-              "Yes. Flat and low-slope roof leaks are among our most frequent repair calls in Chicago. We service modified bitumen, TPO, EPDM, and built-up roofing systems found on bungalows, two-flats, and commercial buildings throughout the city and suburbs.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="Roof Leak Repair"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

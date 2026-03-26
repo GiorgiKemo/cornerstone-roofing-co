@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -98,6 +99,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <JsonLd data={globalSchema} />
         {children}
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   );

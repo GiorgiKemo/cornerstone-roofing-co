@@ -25,6 +25,29 @@ export const metadata: Metadata = {
 };
 
 export default function EPDMRoofingPage() {
+  const faqs = [
+    {
+      question: "What is the difference between EPDM and TPO roofing?",
+      answer:
+        "EPDM is a thermoset rubber membrane that is adhered or ballasted and sealed with adhesive tape at seams. TPO is a thermoplastic membrane that is heat-welded at seams. EPDM has a longer track record and better cold-weather flexibility, while TPO offers superior energy efficiency with its reflective surface and stronger welded seams. The best choice depends on your building's specific needs.",
+    },
+    {
+      question: "How long does an EPDM roof last?",
+      answer:
+        "A well-installed EPDM roof typically lasts 25-40 years in Chicago's climate. Some EPDM installations have exceeded 50 years of service. The key factors affecting longevity are membrane thickness, installation quality, and consistent maintenance of seams and flashings.",
+    },
+    {
+      question: "Is EPDM roofing energy efficient?",
+      answer:
+        "Traditional black EPDM absorbs solar heat, which increases summer cooling costs but can reduce winter heating costs. White EPDM membranes reflect solar radiation similarly to TPO, qualifying for cool roof incentives. For Chicago buildings that spend more on heating than cooling, black EPDM can actually provide better year-round energy economics.",
+    },
+    {
+      question: "How much does EPDM roofing cost for a commercial building?",
+      answer:
+        "EPDM roofing installation in Chicago typically costs $5 to $9 per square foot for a complete system including insulation and tear-off. Ballasted systems tend to cost less than fully adhered systems. A 15,000-square-foot building would range from $75,000 to $135,000 depending on the system configuration.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +72,20 @@ export default function EPDMRoofingPage() {
             },
           },
           serviceType: "EPDM Roofing",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -130,29 +167,9 @@ EPDM is available in both black and white versions. The traditional black membra
               "Black EPDM absorbs solar heat to reduce winter heating costs, while white EPDM reflects sunlight to lower summer cooling loads, letting you optimize for your building's energy profile.",
           },
         ]}
-        faqs={[
-          {
-            question: "What is the difference between EPDM and TPO roofing?",
-            answer:
-              "EPDM is a thermoset rubber membrane that is adhered or ballasted and sealed with adhesive tape at seams. TPO is a thermoplastic membrane that is heat-welded at seams. EPDM has a longer track record and better cold-weather flexibility, while TPO offers superior energy efficiency with its reflective surface and stronger welded seams. The best choice depends on your building's specific needs.",
-          },
-          {
-            question: "How long does an EPDM roof last?",
-            answer:
-              "A well-installed EPDM roof typically lasts 25-40 years in Chicago's climate. Some EPDM installations have exceeded 50 years of service. The key factors affecting longevity are membrane thickness, installation quality, and consistent maintenance of seams and flashings.",
-          },
-          {
-            question: "Is EPDM roofing energy efficient?",
-            answer:
-              "Traditional black EPDM absorbs solar heat, which increases summer cooling costs but can reduce winter heating costs. White EPDM membranes reflect solar radiation similarly to TPO, qualifying for cool roof incentives. For Chicago buildings that spend more on heating than cooling, black EPDM can actually provide better year-round energy economics.",
-          },
-          {
-            question: "How much does EPDM roofing cost for a commercial building?",
-            answer:
-              "EPDM roofing installation in Chicago typically costs $5 to $9 per square foot for a complete system including insulation and tear-off. Ballasted systems tend to cost less than fully adhered systems. A 15,000-square-foot building would range from $75,000 to $135,000 depending on the system configuration.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="EPDM Roofing"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

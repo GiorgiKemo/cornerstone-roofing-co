@@ -105,6 +105,7 @@ export default async function SidingBrandPage({
             href: `/siding/${b.slug}/`,
           }))}
         serviceName={brand.title}
+        serviceCategory="siding"
       />
       <Footer />
     </div>

@@ -51,6 +51,20 @@ export default function SidingPage() {
           serviceType: "Siding Installation and Repair",
         }}
       />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: service.sections.faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.a,
+            },
+          })),
+        }}
+      />
       <ServicePageTemplate
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -74,6 +88,7 @@ export default function SidingPage() {
           { title: "Vinyl Siding", href: "/siding/vinyl" },
         ]}
         serviceName="Siding Installation"
+        serviceCategory="siding"
       />
       <Footer />
     </div>

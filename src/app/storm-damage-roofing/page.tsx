@@ -51,6 +51,20 @@ export default function StormDamageRoofingPage() {
           serviceType: "Storm Damage Roof Repair and Replacement",
         }}
       />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: service.sections.faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.a,
+            },
+          })),
+        }}
+      />
       <ServicePageTemplate
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -75,6 +89,7 @@ export default function StormDamageRoofingPage() {
           { title: "Free Roof Estimate", href: "/insurance-claims/free-roof-estimate" },
         ]}
         serviceName="Storm Damage Roofing"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>

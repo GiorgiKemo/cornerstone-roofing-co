@@ -25,6 +25,34 @@ export const metadata: Metadata = {
 };
 
 export default function EmergencyRoofRepairPage() {
+  const faqs = [
+    {
+      question: "How quickly can you get to my house for an emergency roof repair?",
+      answer:
+        "In most cases, we arrive within 2-4 hours of your call for locations within Cook and DuPage counties. Outer suburbs in Will, Kane, and Lake counties may take slightly longer. During major storm events with high call volume, we triage by severity and communicate estimated arrival times clearly.",
+    },
+    {
+      question: "What qualifies as a roofing emergency?",
+      answer:
+        "Any situation where water is actively entering your home, structural integrity is compromised, or further damage is imminent without intervention. Common emergencies include large sections of missing shingles, fallen tree limbs on the roof, holes in the decking, and active leaks during rainfall.",
+    },
+    {
+      question: "How much does emergency roof repair cost in Chicago?",
+      answer:
+        "Emergency repair costs vary based on the scope of damage and materials required. Minor tarping and patching typically ranges from $300 to $800. More extensive emergency repairs involving shingle replacement or flashing work can range from $800 to $2,500. We provide upfront pricing before beginning any work.",
+    },
+    {
+      question: "Will my insurance cover emergency roof repair?",
+      answer:
+        "Most homeowner's insurance policies in Illinois cover emergency repairs caused by sudden events like storms, hail, wind, and fallen trees. Your policy requires you to mitigate further damage, which emergency repair satisfies. We document all work for your claim file.",
+    },
+    {
+      question: "Do you charge extra for nights and weekends?",
+      answer:
+        "Our emergency service rates apply 24/7 including nights, weekends, and holidays. We do not add surcharges based on when you call. The rate is based on the scope of work required, not the time of day.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -49,6 +77,20 @@ export default function EmergencyRoofRepairPage() {
             },
           },
           serviceType: "Emergency Roof Repair",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
         }}
       />
       <ServicePageTemplate
@@ -125,34 +167,9 @@ We understand that an emergency repair is stressful. You may be dealing with wat
               "We tell you exactly what your roof needs, nothing more, nothing less. If a $300 patch repair solves the problem, we will not push you toward a $15,000 replacement.",
           },
         ]}
-        faqs={[
-          {
-            question: "How quickly can you get to my house for an emergency roof repair?",
-            answer:
-              "In most cases, we arrive within 2-4 hours of your call for locations within Cook and DuPage counties. Outer suburbs in Will, Kane, and Lake counties may take slightly longer. During major storm events with high call volume, we triage by severity and communicate estimated arrival times clearly.",
-          },
-          {
-            question: "What qualifies as a roofing emergency?",
-            answer:
-              "Any situation where water is actively entering your home, structural integrity is compromised, or further damage is imminent without intervention. Common emergencies include large sections of missing shingles, fallen tree limbs on the roof, holes in the decking, and active leaks during rainfall.",
-          },
-          {
-            question: "How much does emergency roof repair cost in Chicago?",
-            answer:
-              "Emergency repair costs vary based on the scope of damage and materials required. Minor tarping and patching typically ranges from $300 to $800. More extensive emergency repairs involving shingle replacement or flashing work can range from $800 to $2,500. We provide upfront pricing before beginning any work.",
-          },
-          {
-            question: "Will my insurance cover emergency roof repair?",
-            answer:
-              "Most homeowner's insurance policies in Illinois cover emergency repairs caused by sudden events like storms, hail, wind, and fallen trees. Your policy requires you to mitigate further damage, which emergency repair satisfies. We document all work for your claim file.",
-          },
-          {
-            question: "Do you charge extra for nights and weekends?",
-            answer:
-              "Our emergency service rates apply 24/7 including nights, weekends, and holidays. We do not add surcharges based on when you call. The rate is based on the scope of work required, not the time of day.",
-          },
-        ]}
+        faqs={faqs}
         serviceName="Emergency Roof Repair"
+        serviceCategory="roofing"
       />
       <Footer />
     </div>
