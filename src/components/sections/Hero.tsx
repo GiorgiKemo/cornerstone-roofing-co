@@ -15,7 +15,7 @@ export default function Hero() {
           alt="Beautiful home with new roof at sunset"
           fill
           sizes="100vw"
-          quality={80}
+          quality={90}
           className="object-cover"
           priority
         />
@@ -55,7 +55,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground leading-[1.1] mb-4"
+            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground leading-[1.1] mb-4 drop-shadow-lg"
           >
             Roofing That
             <br />
@@ -68,7 +68,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-lg md:text-xl text-primary-foreground/80 mb-6 max-w-xl leading-relaxed"
+            className="text-lg md:text-xl text-primary-foreground/90 mb-6 max-w-xl leading-relaxed drop-shadow-md"
           >
             Expert roof replacement, repair, and storm damage restoration. Serving Chicago and
             surrounding suburbs with unmatched craftsmanship.
