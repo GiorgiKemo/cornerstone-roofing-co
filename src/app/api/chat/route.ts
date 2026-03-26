@@ -1,7 +1,7 @@
 import { HfInference } from "@huggingface/inference";
 import { buildSystemPrompt } from "@/lib/chat-context";
 
-const MODEL_ID = "HuggingFaceH4/zephyr-7b-beta";
+const MODEL_ID = "meta-llama/Llama-3.1-8B-Instruct";
 const MAX_CONVERSATION_PAIRS = 8;
 
 export async function POST(request: Request) {
