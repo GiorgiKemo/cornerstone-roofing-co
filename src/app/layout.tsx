@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Toaster } from "sonner";
+import ChatWidget from "@/components/chat/ChatWidget";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -100,6 +101,7 @@ export default function RootLayout({
         <JsonLd data={globalSchema} />
         {children}
         <Toaster position="top-right" richColors />
+        <ChatWidget />
       </body>
     </html>
   );
