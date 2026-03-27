@@ -15,7 +15,6 @@ export default function Hero() {
           alt="Beautiful home with new roof at sunset"
           fill
           sizes="100vw"
-          quality={90}
           className="object-cover"
           priority
         />
