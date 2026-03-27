@@ -164,7 +164,7 @@ export default function ServicePageTemplate({
                   initial={{ opacity: 0, y: 30 }}
                   animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="bg-card rounded-xl p-8 border border-border hover:border-secondary/50 hover:shadow-xl transition-all duration-500"
+                  className="bg-card rounded-xl p-6 md:p-8 border border-border hover:border-secondary/50 hover:shadow-xl transition-all duration-500"
                 >
                   <CheckCircle className="w-8 h-8 text-secondary mb-4" />
                   <h3 className="text-lg font-heading font-bold text-foreground mb-2">

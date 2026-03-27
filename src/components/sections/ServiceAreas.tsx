@@ -46,7 +46,7 @@ export default function ServiceAreas() {
           ))}
           <Link
             href="/#contact"
-            className="group flex items-center justify-center gap-2 bg-secondary rounded-lg px-4 py-3 border border-secondary hover:opacity-90 hover:shadow-md transition-all duration-300"
+            className="group col-span-2 sm:col-span-1 flex items-center justify-center gap-2 bg-secondary rounded-lg px-4 py-3 border border-secondary hover:opacity-90 hover:shadow-md transition-all duration-300"
           >
             <span className="font-semibold text-sm text-secondary-foreground">
               Don&apos;t See Your Area? Contact Us &rarr;

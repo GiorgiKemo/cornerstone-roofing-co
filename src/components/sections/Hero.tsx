@@ -37,7 +37,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10 pt-45 pb-16">
+      <div className="container mx-auto px-4 relative z-10 pt-28 md:pt-45 pb-16">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -100,7 +100,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-wrap items-center gap-6 mt-8 pt-6 border-t border-primary-foreground/20"
+            className="flex flex-wrap items-center gap-4 md:gap-6 mt-8 pt-6 border-t border-primary-foreground/20"
           >
             {[
               { value: "500+", label: "Roofs Completed" },

@@ -574,7 +574,7 @@ export default async function BlogPostPage({
               items={[
                 { label: "Home", href: "/" },
                 { label: "Blog", href: "/blog" },
-                { label: post.title },
+                { label: post.title.length > 40 ? post.title.slice(0, 40) + "…" : post.title },
               ]}
               dark
             />
@@ -633,7 +633,7 @@ export default async function BlogPostPage({
             </article>
 
             {/* Sidebar */}
-            <aside className="lg:sticky lg:top-24 self-start">
+            <aside className="mt-8 pt-8 border-t border-border lg:mt-0 lg:pt-0 lg:border-t-0 lg:sticky lg:top-24 self-start">
               <div className="bg-muted/50 rounded-xl p-6 border border-border">
                 <h3 className="text-lg font-heading font-bold text-foreground mb-4">
                   Related Services

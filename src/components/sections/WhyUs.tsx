@@ -60,7 +60,7 @@ export default function WhyUs() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left side - text */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
@@ -78,8 +78,8 @@ export default function WhyUs() {
               unwavering commitment to doing the job right — the first time.
             </p>
 
-            <div className="flex flex-wrap gap-4">
-              <div className="bg-primary rounded-xl px-6 py-4 text-center">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
+              <div className="bg-primary rounded-xl px-4 py-3 sm:px-6 sm:py-4 text-center">
                 <div className="text-3xl font-heading font-bold text-primary-foreground">
                   500+
                 </div>
@@ -87,7 +87,7 @@ export default function WhyUs() {
                   Projects Done
                 </div>
               </div>
-              <div className="bg-secondary rounded-xl px-6 py-4 text-center">
+              <div className="bg-secondary rounded-xl px-4 py-3 sm:px-6 sm:py-4 text-center">
                 <div className="text-3xl font-heading font-bold text-secondary-foreground">
                   98%
                 </div>
@@ -95,7 +95,7 @@ export default function WhyUs() {
                   Client Satisfaction
                 </div>
               </div>
-              <div className="bg-muted rounded-xl px-6 py-4 text-center">
+              <div className="bg-muted rounded-xl px-4 py-3 sm:px-6 sm:py-4 text-center">
                 <div className="text-3xl font-heading font-bold text-foreground">
                   15+
                 </div>

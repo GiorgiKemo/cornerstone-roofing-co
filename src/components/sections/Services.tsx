@@ -93,7 +93,7 @@ export default function Services() {
             >
               <Link
                 href={service.href}
-                className="group block bg-card rounded-xl p-8 border border-border hover:border-secondary/50 hover:shadow-xl transition-all duration-500"
+                className="group block bg-card rounded-xl p-6 md:p-8 border border-border hover:border-secondary/50 hover:shadow-xl transition-all duration-500"
               >
                 <div className="w-14 h-14 rounded-lg bg-secondary/10 flex items-center justify-center mb-5 group-hover:bg-secondary group-hover:scale-110 transition-all duration-500">
                   <service.icon className="w-7 h-7 text-secondary group-hover:text-secondary-foreground transition-colors duration-500" />

@@ -47,7 +47,7 @@ export default function ContactCTA({ service, city }: ContactCTAProps) {
       />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -80,7 +80,7 @@ export default function ContactCTA({ service, city }: ContactCTAProps) {
                 className="flex items-center gap-3 text-primary-foreground/80 hover:text-secondary transition-colors duration-300"
               >
                 <Mail className="w-5 h-5 text-secondary" />
-                <span className="font-medium">info@cornerstoneroofingco.com</span>
+                <span className="font-medium break-all">info@cornerstoneroofingco.com</span>
               </a>
               <div className="flex items-center gap-3 text-primary-foreground/80">
                 <MapPin className="w-5 h-5 text-secondary" />
@@ -100,7 +100,7 @@ export default function ContactCTA({ service, city }: ContactCTAProps) {
           >
             <form
               ref={formRef}
-              className="bg-card rounded-2xl p-8 shadow-2xl"
+              className="bg-card rounded-2xl p-5 sm:p-8 shadow-2xl"
               action={formAction}
             >
               <h3 className="text-2xl font-heading font-bold text-foreground mb-6">

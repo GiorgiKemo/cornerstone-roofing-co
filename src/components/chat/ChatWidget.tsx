@@ -143,7 +143,7 @@ export default function ChatWidget() {
       {/* Floating Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full bg-secondary text-secondary-foreground shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[60] w-14 h-14 rounded-full bg-secondary text-secondary-foreground shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         aria-label={isOpen ? "Close chat" : "Open chat"}
@@ -163,7 +163,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-6 z-[60] w-[380px] h-[520px] max-sm:w-[calc(100vw-2rem)] max-sm:h-[calc(100dvh-7rem)] max-sm:bottom-4 max-sm:right-4 bg-card rounded-2xl shadow-2xl border border-border flex flex-col overflow-hidden"
+            className="fixed bottom-22 right-4 sm:bottom-24 sm:right-6 z-[60] w-[380px] max-md:w-[calc(100vw-2rem)] h-[520px] max-sm:h-[calc(100dvh-7rem)] bg-card rounded-2xl shadow-2xl border border-border flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="bg-primary px-4 py-3 flex items-center justify-between shrink-0">
@@ -176,7 +176,7 @@ export default function ChatWidget() {
               <div className="flex items-center gap-1">
                 <button
                   onClick={handleHumanEscalation}
-                  className="flex items-center gap-1 text-xs text-primary-foreground/70 hover:text-secondary transition-colors px-2 py-1 rounded"
+                  className="flex items-center gap-1 text-xs text-primary-foreground/70 hover:text-secondary transition-colors px-3 py-2 min-h-[44px] rounded"
                   title="Talk to a human"
                 >
                   <Phone className="w-3.5 h-3.5" />
@@ -285,7 +285,7 @@ export default function ChatWidget() {
                 <button
                   onClick={handleSend}
                   disabled={!input.trim() || isStreaming}
-                  className="w-9 h-9 rounded-lg bg-secondary text-secondary-foreground flex items-center justify-center hover:opacity-90 transition-opacity disabled:opacity-40 shrink-0"
+                  className="w-10 h-10 rounded-lg bg-secondary text-secondary-foreground flex items-center justify-center hover:opacity-90 transition-opacity disabled:opacity-40 shrink-0"
                   aria-label="Send message"
                 >
                   <Send className="w-4 h-4" />

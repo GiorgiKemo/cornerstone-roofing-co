@@ -33,7 +33,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Image
@@ -122,7 +122,7 @@ export default function Footer() {
                 href="mailto:info@cornerstoneroofingco.com"
                 className="flex items-center gap-2 text-primary-foreground/60 text-sm hover:text-secondary transition-colors"
               >
-                <Mail className="w-4 h-4" /> info@cornerstoneroofingco.com
+                <Mail className="w-4 h-4 shrink-0" /> <span className="break-all">info@cornerstoneroofingco.com</span>
               </a>
               <div className="flex items-center gap-2 text-primary-foreground/60 text-sm">
                 <MapPin className="w-4 h-4" /> Chicagoland, IL

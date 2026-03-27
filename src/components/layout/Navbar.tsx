@@ -123,7 +123,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) =>
             link.hasDropdown ? (
               <div key={link.label} className="relative" ref={dropdownRef}>
@@ -148,7 +148,7 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[520px] bg-card rounded-xl shadow-2xl border border-border p-4 grid grid-cols-2 gap-2"
+                      className="absolute top-full right-0 mt-4 w-[480px] max-w-[calc(100vw-2rem)] bg-card rounded-xl shadow-2xl border border-border p-4 grid grid-cols-2 gap-2"
                     >
                       {services.map((service) => (
                         <Link
@@ -199,7 +199,7 @@ export default function Navbar() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          className={`md:hidden p-2 ${
+          className={`lg:hidden p-3 ${
             scrolled ? "text-foreground" : "text-primary-foreground"
           }`}
         >
@@ -218,7 +218,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-card/95 backdrop-blur-lg border-t border-border"
+            className="lg:hidden fixed inset-x-0 top-0 bottom-0 bg-card/95 backdrop-blur-lg border-t border-border overflow-y-auto pt-20"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
               {navLinks.map((link) =>

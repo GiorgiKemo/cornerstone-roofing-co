@@ -41,7 +41,7 @@ export default function BenefitsGrid({ benefits }: BenefitsGridProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-card rounded-xl p-6 border border-border hover:border-secondary/50 hover:shadow-lg transition-all duration-300"
+              className="bg-card rounded-xl p-5 md:p-6 border border-border hover:border-secondary/50 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mb-4">
                 <CheckCircle2 className="w-6 h-6 text-secondary" />

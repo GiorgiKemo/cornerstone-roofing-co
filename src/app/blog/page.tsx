@@ -160,7 +160,7 @@ export default function BlogIndexPage() {
                 key={post.slug}
                 className="group bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg transition-all"
               >
-                <div className="p-8">
+                <div className="p-5 md:p-8">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-secondary bg-secondary/10 px-3 py-1 rounded-full">
                       <Tag className="w-3 h-3" />
