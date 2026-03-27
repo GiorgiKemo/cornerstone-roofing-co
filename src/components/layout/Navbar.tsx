@@ -218,7 +218,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden fixed inset-x-0 top-0 bottom-0 bg-card/95 backdrop-blur-lg border-t border-border overflow-y-auto pt-20"
+            className="lg:hidden bg-card/95 backdrop-blur-lg border-t border-border overflow-y-auto max-h-[calc(100dvh-4rem)]"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
               {navLinks.map((link) =>
